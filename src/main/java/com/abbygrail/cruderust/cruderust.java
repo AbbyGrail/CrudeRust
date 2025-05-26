@@ -1,5 +1,8 @@
 package com.abbygrail.cruderust;
 
+import com.abbygrail.cruderust.data.ModDataGenerators;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -8,7 +11,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -33,11 +35,14 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(cruderust.MODID)
 public class cruderust
 {
+
     public static final String MODID = "cruderust";
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
@@ -46,6 +51,12 @@ public class cruderust
 
     public static final DeferredBlock<Block> BRONZE_BLOCK = BLOCKS.registerSimpleBlock("bronze_block", BlockBehaviour.Properties.of().mapColor(MapColor.GOLD));
     public static final DeferredItem<BlockItem> BRONZE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("bronze_block", BRONZE_BLOCK);
+    public static final DeferredBlock<Block> FIREWOOD = BLOCKS.register("firewood",
+            () -> new SlabBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(1.5f, 1.0f)
+                    .sound(SoundType.CHERRY_WOOD)));
+    public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
 
     public static final DeferredItem<Item> BRONZE_INGOT = ITEMS.registerSimpleItem("bronze_ingot");
     public static final DeferredItem<Item> BRONZE_NUGGET = ITEMS.registerSimpleItem("bronze_nugget");
@@ -58,6 +69,7 @@ public class cruderust
                 output.accept(BRONZE_INGOT.get());
                 output.accept(BRONZE_NUGGET.get());
                 output.accept(BRONZE_BLOCK_ITEM.get());
+                output.accept(FIREWOOD_ITEM.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -124,3 +136,4 @@ public class cruderust
         }
     }
 }
+

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "cruderust:block/firewood_bottom"
+    },
+    "type=double": {
+      "model": "cruderust:block/firewood_full"
+    },
+    "type=top": {
+      "model": "cruderust:block/firewood_top"
+    }
+  }
+}

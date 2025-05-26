@@ -54,6 +54,8 @@ public class cruderust
     public static final DeferredBlock<Block> FIREWOOD = BLOCKS.register("firewood",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
+                    .noOcclusion()
+                    .isSuffocating((state, level, pos) -> false)
                     .strength(1.5f, 1.0f)
                     .sound(SoundType.CHERRY_WOOD)));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);

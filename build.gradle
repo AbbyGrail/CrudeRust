@@ -13,6 +13,16 @@ tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
+repositories {
+    maven {
+        url = "https://maven.teamabnormals.com"
+    }
+}
+
+dependencies {
+    implementation("com.teamabnormals:blueprint:1.21.1-8.0.5")
+}
+
 version = mod_version
 group = mod_group_id
 

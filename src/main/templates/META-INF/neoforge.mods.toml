@@ -28,3 +28,10 @@ description="Alternative take on minecraft's progression"
     versionRange="1.21.1"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.cruderust]]
+    modId = "blueprint"
+    type = "required"
+    versionRange = "[8.0.5,)"
+    ordering = "AFTER"
+    side = "BOTH"

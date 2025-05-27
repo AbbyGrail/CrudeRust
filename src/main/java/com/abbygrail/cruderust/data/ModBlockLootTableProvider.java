@@ -8,8 +8,12 @@ import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SlabBlock;
 
 import java.util.Set;
+
+import static com.abbygrail.cruderust.cruderust.FIREWOOD;
+import static com.abbygrail.cruderust.cruderust.FIREWOOD_ITEM;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected ModBlockLootTableProvider(HolderLookup.Provider registries) {
@@ -19,7 +23,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(cruderust.BRONZE_BLOCK.get());
-        createSlabItemTable(cruderust.FIREWOOD.get());
+//        createSlabItemTable(cruderust.FIREWOOD.get());
+        this.add(cruderust.FIREWOOD.get(), createSlabItemTable(cruderust.FIREWOOD.get()));
+
 
 
 

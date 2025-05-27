@@ -53,6 +53,7 @@ public class cruderust
                     .noOcclusion()
                     .isSuffocating((state, level, pos) -> false)
                     .strength(1.5f, 1.0f)
+//                    .noLootTable()
                     .sound(SoundType.CHERRY_WOOD)));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
 

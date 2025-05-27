@@ -1,6 +1,6 @@
 package com.abbygrail.cruderust;
 
-import com.abbygrail.cruderust.data.ModDataGenerators;
+import com.abbygrail.cruderust.core.registry.CrudeRustItems;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import org.slf4j.Logger;
@@ -10,11 +10,9 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -32,11 +30,9 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(cruderust.MODID)
@@ -60,19 +56,17 @@ public class cruderust
                     .sound(SoundType.CHERRY_WOOD)));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
 
-    public static final DeferredItem<Item> BRONZE_INGOT = ITEMS.registerSimpleItem("bronze_ingot");
-    public static final DeferredItem<Item> BRONZE_NUGGET = ITEMS.registerSimpleItem("bronze_nugget");
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CRUDERUST = CREATIVE_MODE_TABS.register("cruderust", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.cruderust"))
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> BRONZE_INGOT.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
-                output.accept(BRONZE_INGOT.get());
-                output.accept(BRONZE_NUGGET.get());
-                output.accept(BRONZE_BLOCK_ITEM.get());
-                output.accept(FIREWOOD_ITEM.get());
-            }).build());
+//    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CRUDERUST = CREATIVE_MODE_TABS.register("cruderust", () -> CreativeModeTab.builder()
+//            .title(Component.translatable("itemGroup.cruderust"))
+//            .withTabsBefore(CreativeModeTabs.COMBAT)
+//            .icon(() -> BRONZE_INGOT.get().getDefaultInstance())
+//            .displayItems((parameters, output) -> {
+//                output.accept(BRONZE_BLOCK_ITEM.get());
+//                output.accept(BRONZE_INGOT.get());
+//                output.accept(BRONZE_NUGGET.get());
+//                output.accept(FIREWOOD_ITEM.get());
+//            }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
@@ -81,6 +75,7 @@ public class cruderust
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        CrudeRustItems.register(modEventBus);
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);

@@ -1,8 +1,7 @@
 package com.abbygrail.cruderust;
 
 import com.abbygrail.cruderust.core.registry.CrudeRustItems;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -13,8 +12,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.api.distmarker.Dist;
@@ -45,15 +42,19 @@ public class cruderust
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final DeferredBlock<Block> BRONZE_BLOCK = BLOCKS.registerSimpleBlock("bronze_block", BlockBehaviour.Properties.of().mapColor(MapColor.GOLD));
+    public static final DeferredBlock<RotatedPillarBlock> BRONZE_BLOCK =
+            BLOCKS.register("bronze_block", () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GOLD)));
     public static final DeferredItem<BlockItem> BRONZE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("bronze_block", BRONZE_BLOCK);
+
+    public static final DeferredBlock<Block> ARSENIC_ORE = BLOCKS.registerSimpleBlock("arsenic_ore");
+    public static final DeferredItem<BlockItem> ARSENIC_ORE_ITEM = ITEMS.registerSimpleBlockItem("arsenic_ore", ARSENIC_ORE);
+
     public static final DeferredBlock<Block> FIREWOOD = BLOCKS.register("firewood",
             () -> new SlabBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .noOcclusion()
                     .isSuffocating((state, level, pos) -> false)
                     .strength(1.5f, 1.0f)
-//                    .noLootTable()
                     .sound(SoundType.CHERRY_WOOD)));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
 

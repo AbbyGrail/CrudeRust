@@ -3,6 +3,7 @@ package com.abbygrail.cruderust.core.registry;
 import com.abbygrail.cruderust.cruderust;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
@@ -20,6 +21,7 @@ public class CrudeRustItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BRONZE_INGOT = ITEMS.registerSimpleItem("bronze_ingot");
     public static final DeferredItem<Item> BRONZE_NUGGET = ITEMS.registerSimpleItem("bronze_nugget");
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

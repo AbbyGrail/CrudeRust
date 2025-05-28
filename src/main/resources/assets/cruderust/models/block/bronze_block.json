@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "cruderust:block/bronze_block_top",
-    "side": "cruderust:block/bronze_block_side"
-  }
-}

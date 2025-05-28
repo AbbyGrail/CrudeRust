@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cruderust:bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "cruderust:bronze_ingot"
+  }
+}

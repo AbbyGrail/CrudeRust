@@ -21,6 +21,7 @@ public class CrudeRustItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BRONZE_INGOT = ITEMS.registerSimpleItem("bronze_ingot");
     public static final DeferredItem<Item> BRONZE_NUGGET = ITEMS.registerSimpleItem("bronze_nugget");
+    public static final DeferredItem<Item> FIREWOOD = ITEMS.registerSimpleItem("firewood");
 
 
     public static void register(IEventBus eventBus) {

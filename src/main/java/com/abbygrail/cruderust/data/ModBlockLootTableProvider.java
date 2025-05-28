@@ -12,8 +12,6 @@ import net.minecraft.world.level.block.SlabBlock;
 
 import java.util.Set;
 
-import static com.abbygrail.cruderust.cruderust.FIREWOOD;
-import static com.abbygrail.cruderust.cruderust.FIREWOOD_ITEM;
 
 public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected ModBlockLootTableProvider(HolderLookup.Provider registries) {
@@ -24,7 +22,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(cruderust.BRONZE_BLOCK.get());
         dropSelf(cruderust.ARSENIC_ORE.get());
-        this.add(cruderust.FIREWOOD.get(), createSlabItemTable(cruderust.FIREWOOD.get()));
+//        this.add(cruderust.FIREWOOD.get(), createSlabItemTable(cruderust.FIREWOOD.get()));
 
 
 

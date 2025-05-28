@@ -1,5 +1,6 @@
 package com.abbygrail.cruderust;
 
+import com.abbygrail.cruderust.block.FireWoodBlock;
 import com.abbygrail.cruderust.core.registry.CrudeRustItems;
 import net.minecraft.world.level.block.*;
 import org.slf4j.Logger;
@@ -30,6 +31,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import static com.teamabnormals.blueprint.core.registry.BlueprintBlockEntityTypes.HELPER;
+
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(cruderust.MODID)
@@ -50,14 +53,17 @@ public class cruderust
     public static final DeferredItem<BlockItem> ARSENIC_ORE_ITEM = ITEMS.registerSimpleBlockItem("arsenic_ore", ARSENIC_ORE);
 
     public static final DeferredBlock<Block> FIREWOOD = BLOCKS.register("firewood",
-            () -> new SlabBlock(BlockBehaviour.Properties.of()
+            () -> new FireWoodBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .noOcclusion()
                     .isSuffocating((state, level, pos) -> false)
-                    .strength(1.5f, 1.0f)
+                    .instabreak()
                     .sound(SoundType.CHERRY_WOOD)));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
 
+
+
+//    public static final RegistryObject<Block> COAL = HELPER.createPlacedItem("coal", () -> new CoalBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).strength(5.0F, 6.0F).requiresCorrectToolForDrops().lightLevel(state -> !state.getValue(CoalBlock.LIT) ? 0 : 9 + state.getValue(CoalBlock.COAL)).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
 //    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CRUDERUST = CREATIVE_MODE_TABS.register("cruderust", () -> CreativeModeTab.builder()
 //            .title(Component.translatable("itemGroup.cruderust"))

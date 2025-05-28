@@ -41,11 +41,11 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape THREE_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D);
     protected static final VoxelShape FOUR_AABB = Shapes.or(
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.box(6.0D, 4.0D, 0.0D, 10.0D, 8.0D, 16.0D)
+            Block.box(0.0D, 4.0D, 6.0D, 16.0D, 8.0D, 10.0D)
             );
     protected static final VoxelShape FIVE_AABB = Shapes.or(
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.box(3.0D, 4.0D, 0.0D, 13.0D, 8.0D, 16.0D)
+            Block.box(0.0D, 4.0D, 3.0D, 16.0D, 8.0D, 13.0D)
             );
     protected static final VoxelShape SIX_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
     protected static final VoxelShape SEVEN_AABB = Shapes.or(
@@ -59,11 +59,11 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape NINE_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
     protected static final VoxelShape TEN_AABB = Shapes.or(
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.box(6.0D, 12.0D, 0.0D, 10.0D, 16.0D, 16.0D)
+            Block.box(0.0D, 12.0D, 6.0D, 16.0D, 16.0D, 10.0D)
     );
     protected static final VoxelShape ELEVEN_AABB = Shapes.or(
             Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.box(3.0D, 12.0D, 0.0D, 13.0D, 16.0D, 16.0D)
+            Block.box(0.0D, 12.0D, 3.0D, 16.0D, 16.0D, 13.0D)
     );
     protected static final VoxelShape TWELVE_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 

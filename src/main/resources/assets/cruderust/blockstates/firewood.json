@@ -1,13 +1,40 @@
 {
   "variants": {
-    "type=bottom": {
-      "model": "cruderust:block/firewood_bottom"
+    "cuts=1": {
+      "model": "cruderust:block/firewood_1"
     },
-    "type=double": {
-      "model": "cruderust:block/firewood_full"
+    "cuts=2": {
+      "model": "cruderust:block/firewood_2"
     },
-    "type=top": {
-      "model": "cruderust:block/firewood_top"
+    "cuts=3": {
+      "model": "cruderust:block/firewood_3"
+    },
+    "cuts=4": {
+      "model": "cruderust:block/firewood_4"
+    },
+    "cuts=5": {
+      "model": "cruderust:block/firewood_5"
+    },
+    "cuts=6": {
+      "model": "cruderust:block/firewood_6"
+    },
+    "cuts=7": {
+      "model": "cruderust:block/firewood_7"
+    },
+    "cuts=8": {
+      "model": "cruderust:block/firewood_8"
+    },
+    "cuts=9": {
+      "model": "cruderust:block/firewood_9"
+    },
+    "cuts=10": {
+      "model": "cruderust:block/firewood_10"
+    },
+    "cuts=11": {
+      "model": "cruderust:block/firewood_11"
+    },
+    "cuts=12": {
+      "model": "cruderust:block/firewood_12"
     }
   }
 }

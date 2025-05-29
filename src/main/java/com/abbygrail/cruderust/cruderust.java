@@ -1,8 +1,10 @@
 package com.abbygrail.cruderust;
 
+import com.abbygrail.cruderust.block.BrazierBlock;
 import com.abbygrail.cruderust.block.FireWoodBlock;
 import com.abbygrail.cruderust.core.registry.CrudeRustItems;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -56,10 +58,22 @@ public class cruderust
             () -> new FireWoodBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.WOOD)
                     .noOcclusion()
+                    .noLootTable()
                     .isSuffocating((state, level, pos) -> false)
                     .instabreak()
-                    .sound(SoundType.CHERRY_WOOD)));
+                    .sound(SoundType.CHERRY_WOOD)
+            ));
     public static final DeferredItem<BlockItem> FIREWOOD_ITEM = ITEMS.registerSimpleBlockItem("firewood", FIREWOOD);
+
+    public static final DeferredBlock<Block> BRAZIER = BLOCKS.register("brazier",
+            () -> new BrazierBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .noOcclusion()
+                    .isSuffocating((state, level, pos) -> false)
+                    .sound(SoundType.COPPER)
+                    .lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 12 : 0)
+            ));
+    public static final DeferredItem<BlockItem> BRAZIER_ITEM = ITEMS.registerSimpleBlockItem("brazier", BRAZIER);
 
 
 

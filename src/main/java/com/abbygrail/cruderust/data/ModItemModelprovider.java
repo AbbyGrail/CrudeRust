@@ -17,5 +17,6 @@ public class ModItemModelprovider extends ItemModelProvider {
         basicItem(CrudeRustItems.BRONZE_NUGGET.get());
         basicItem(CrudeRustItems.SLAG.get());
         basicItem(cruderust.FIREWOOD_ITEM.get());
+        basicItem(cruderust.BRAZIER_ITEM.get());
     }
 }

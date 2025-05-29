@@ -22,8 +22,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(cruderust.BRONZE_BLOCK.get());
         dropSelf(cruderust.ARSENIC_ORE.get());
-//        this.add(cruderust.FIREWOOD.get(), createSlabItemTable(cruderust.FIREWOOD.get()));
-
+        dropSelf(cruderust.BRAZIER.get());
 
 
 

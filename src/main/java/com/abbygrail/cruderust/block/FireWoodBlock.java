@@ -1,5 +1,6 @@
 package com.abbygrail.cruderust.block;
 
+import com.abbygrail.cruderust.block.state.FireWoodState;
 import com.abbygrail.cruderust.core.registry.CrudeRustBlocks;
 import com.abbygrail.cruderust.cruderust;
 import net.minecraft.Util;
@@ -35,6 +36,7 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
     public static final IntegerProperty CUTS = IntegerProperty.create("cuts", 1,12);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    public static final EnumProperty<FireWoodState> STATE = EnumProperty.create("state", FireWoodState.class);
 
 
     protected static final VoxelShape ONE_AABB = Block.box(6.0D, 0.0D, 0.0D, 10.0D, 4.0D, 16.0D);
@@ -70,7 +72,7 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
 
     public FireWoodBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(CUTS, 1).setValue(WATERLOGGED, false).setValue(FACING, Direction.NORTH));
+        this.registerDefaultState(this.stateDefinition.any().setValue(CUTS, 1).setValue(WATERLOGGED, false).setValue(FACING, Direction.NORTH).setValue(STATE, FireWoodState.OFF));
     }
 
 
@@ -141,7 +143,7 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_56120_) {
-        p_56120_.add(CUTS, WATERLOGGED, FACING);
+        p_56120_.add(CUTS, WATERLOGGED, FACING, STATE);
     }
 
 }

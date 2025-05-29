@@ -1,13 +1,13 @@
 {
 	"credit": "model by AbbyGrail ",
 	"textures": {
-		"0": "cruderust:block/firewood",
-		"particle": "cruderust:block/firewood"
+		"0": "cruderust:block/firewood_charred",
+		"particle": "cruderust:block/firewood_charred"
 	},
 	"elements": [
 		{
-			"from": [1, 0, 0],
-			"to": [5, 4, 16],
+			"from": [3, 0, 0],
+			"to": [7, 4, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
 			"faces": {
 				"north": {"uv": [0, 4, 4, 8], "texture": "#0"},
@@ -19,21 +19,8 @@
 			}
 		},
 		{
-			"from": [6, 0, 0],
-			"to": [10, 4, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
-			"faces": {
-				"north": {"uv": [0, 4, 4, 8], "texture": "#0"},
-				"east": {"uv": [0, 12, 16, 16], "texture": "#0"},
-				"south": {"uv": [0, 4, 4, 8], "texture": "#0"},
-				"west": {"uv": [0, 12, 16, 16], "texture": "#0"},
-				"up": {"uv": [0, 0, 16, 4], "rotation": 90, "texture": "#0"},
-				"down": {"uv": [0, 8, 16, 12], "rotation": 270, "texture": "#0"}
-			}
-		},
-		{
-			"from": [11, 0, 0],
-			"to": [15, 4, 16],
+			"from": [9, 0, 0],
+			"to": [13, 4, 16],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 8]},
 			"faces": {
 				"north": {"uv": [0, 4, 4, 8], "texture": "#0"},

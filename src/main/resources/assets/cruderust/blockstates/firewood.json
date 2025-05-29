@@ -1,40 +1,63 @@
 {
   "variants": {
-    "cuts=1": {
-      "model": "cruderust:block/firewood_1"
-    },
-    "cuts=2": {
-      "model": "cruderust:block/firewood_2"
-    },
-    "cuts=3": {
-      "model": "cruderust:block/firewood_3"
-    },
-    "cuts=4": {
-      "model": "cruderust:block/firewood_4"
-    },
-    "cuts=5": {
-      "model": "cruderust:block/firewood_5"
-    },
-    "cuts=6": {
-      "model": "cruderust:block/firewood_6"
-    },
-    "cuts=7": {
-      "model": "cruderust:block/firewood_7"
-    },
-    "cuts=8": {
-      "model": "cruderust:block/firewood_8"
-    },
-    "cuts=9": {
-      "model": "cruderust:block/firewood_9"
-    },
-    "cuts=10": {
-      "model": "cruderust:block/firewood_10"
-    },
-    "cuts=11": {
-      "model": "cruderust:block/firewood_11"
-    },
-    "cuts=12": {
-      "model": "cruderust:block/firewood_12"
-    }
+    "cuts=1,facing=north": { "model": "cruderust:block/firewood_1" },
+    "cuts=1,facing=south": { "model": "cruderust:block/firewood_1", "y": 180 },
+    "cuts=1,facing=west":  { "model": "cruderust:block/firewood_1", "y": 270 },
+    "cuts=1,facing=east":  { "model": "cruderust:block/firewood_1", "y": 90 },
+
+    "cuts=2,facing=north": { "model": "cruderust:block/firewood_2" },
+    "cuts=2,facing=south": { "model": "cruderust:block/firewood_2", "y": 180 },
+    "cuts=2,facing=west":  { "model": "cruderust:block/firewood_2", "y": 270 },
+    "cuts=2,facing=east":  { "model": "cruderust:block/firewood_2", "y": 90 },
+
+    "cuts=3,facing=north": { "model": "cruderust:block/firewood_3" },
+    "cuts=3,facing=south": { "model": "cruderust:block/firewood_3", "y": 180 },
+    "cuts=3,facing=west":  { "model": "cruderust:block/firewood_3", "y": 270 },
+    "cuts=3,facing=east":  { "model": "cruderust:block/firewood_3", "y": 90 },
+
+    "cuts=4,facing=north": { "model": "cruderust:block/firewood_4" },
+    "cuts=4,facing=south": { "model": "cruderust:block/firewood_4", "y": 180 },
+    "cuts=4,facing=west":  { "model": "cruderust:block/firewood_4", "y": 270 },
+    "cuts=4,facing=east":  { "model": "cruderust:block/firewood_4", "y": 90 },
+
+    "cuts=5,facing=north": { "model": "cruderust:block/firewood_5" },
+    "cuts=5,facing=south": { "model": "cruderust:block/firewood_5", "y": 180 },
+    "cuts=5,facing=west":  { "model": "cruderust:block/firewood_5", "y": 270 },
+    "cuts=5,facing=east":  { "model": "cruderust:block/firewood_5", "y": 90 },
+
+    "cuts=6,facing=north": { "model": "cruderust:block/firewood_6" },
+    "cuts=6,facing=south": { "model": "cruderust:block/firewood_6", "y": 180 },
+    "cuts=6,facing=west":  { "model": "cruderust:block/firewood_6", "y": 270 },
+    "cuts=6,facing=east":  { "model": "cruderust:block/firewood_6", "y": 90 },
+
+    "cuts=7,facing=north": { "model": "cruderust:block/firewood_7" },
+    "cuts=7,facing=south": { "model": "cruderust:block/firewood_7", "y": 180 },
+    "cuts=7,facing=west":  { "model": "cruderust:block/firewood_7", "y": 270 },
+    "cuts=7,facing=east":  { "model": "cruderust:block/firewood_7", "y": 90 },
+
+    "cuts=8,facing=north": { "model": "cruderust:block/firewood_8" },
+    "cuts=8,facing=south": { "model": "cruderust:block/firewood_8", "y": 180 },
+    "cuts=8,facing=west":  { "model": "cruderust:block/firewood_8", "y": 270 },
+    "cuts=8,facing=east":  { "model": "cruderust:block/firewood_8", "y": 90 },
+
+    "cuts=9,facing=north": { "model": "cruderust:block/firewood_9" },
+    "cuts=9,facing=south": { "model": "cruderust:block/firewood_9", "y": 180 },
+    "cuts=9,facing=west":  { "model": "cruderust:block/firewood_9", "y": 270 },
+    "cuts=9,facing=east":  { "model": "cruderust:block/firewood_9", "y": 90 },
+
+    "cuts=10,facing=north": { "model": "cruderust:block/firewood_10" },
+    "cuts=10,facing=south": { "model": "cruderust:block/firewood_10", "y": 180 },
+    "cuts=10,facing=west":  { "model": "cruderust:block/firewood_10", "y": 270 },
+    "cuts=10,facing=east":  { "model": "cruderust:block/firewood_10", "y": 90 },
+
+    "cuts=11,facing=north": { "model": "cruderust:block/firewood_11" },
+    "cuts=11,facing=south": { "model": "cruderust:block/firewood_11", "y": 180 },
+    "cuts=11,facing=west":  { "model": "cruderust:block/firewood_11", "y": 270 },
+    "cuts=11,facing=east":  { "model": "cruderust:block/firewood_11", "y": 90 },
+
+    "cuts=12,facing=north": { "model": "cruderust:block/firewood_12" },
+    "cuts=12,facing=south": { "model": "cruderust:block/firewood_12", "y": 180 },
+    "cuts=12,facing=west":  { "model": "cruderust:block/firewood_12", "y": 270 },
+    "cuts=12,facing=east":  { "model": "cruderust:block/firewood_12", "y": 90 }
   }
 }

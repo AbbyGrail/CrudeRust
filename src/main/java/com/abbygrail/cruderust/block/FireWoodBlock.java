@@ -15,13 +15,12 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.*;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -35,6 +34,8 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
 
     public static final IntegerProperty CUTS = IntegerProperty.create("cuts", 1,12);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+
 
     protected static final VoxelShape ONE_AABB = Block.box(6.0D, 0.0D, 0.0D, 10.0D, 4.0D, 16.0D);
     protected static final VoxelShape TWO_AABB = Block.box(3.0D, 0.0D, 0.0D, 13.0D, 4.0D, 16.0D);
@@ -58,29 +59,32 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
     );
     protected static final VoxelShape NINE_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D);
     protected static final VoxelShape TEN_AABB = Shapes.or(
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
             Block.box(0.0D, 12.0D, 6.0D, 16.0D, 16.0D, 10.0D)
     );
     protected static final VoxelShape ELEVEN_AABB = Shapes.or(
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
             Block.box(0.0D, 12.0D, 3.0D, 16.0D, 16.0D, 13.0D)
     );
     protected static final VoxelShape TWELVE_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
 
     public FireWoodBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(CUTS, 1).setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.stateDefinition.any().setValue(CUTS, 1).setValue(WATERLOGGED, false).setValue(FACING, Direction.NORTH));
     }
+
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         BlockState state = context.getLevel().getBlockState(context.getClickedPos());
+        Direction direction = context.getHorizontalDirection().getOpposite();
+
         if (state.is(this)) {
             return state.setValue(CUTS, Math.min(12, state.getValue(CUTS) + 1));
         } else {
             FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
             boolean flag = fluidstate.getType() == Fluids.WATER;
-            return super.getStateForPlacement(context).setValue(WATERLOGGED, flag);
+            return super.getStateForPlacement(context).setValue(WATERLOGGED, flag).setValue(FACING, direction);
         }
     }
 
@@ -137,12 +141,7 @@ public class FireWoodBlock extends Block implements SimpleWaterloggedBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_56120_) {
-        p_56120_.add(CUTS, WATERLOGGED);
+        p_56120_.add(CUTS, WATERLOGGED, FACING);
     }
-//
-//    @Override
-//    public String getDescriptionId() {
-//        return Util.makeDescriptionId("item", new ResourceLocation(BuiltInRegistries.BLOCK.getKey(this).getPath()));
-//    }
 
 }

@@ -18,6 +18,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = cruderust.MODID, bus = EventBusSubscriber.Bus.MOD)
